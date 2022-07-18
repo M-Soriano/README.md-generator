@@ -1,8 +1,14 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs');
-const filemaker = require("./filemaker");
-/*// TODO: Create an array of questions for user input
+const util = require("util")
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
+
+
+
+
+// TODO: Create an array of questions for user input
 const questions = [
     
     {
@@ -13,8 +19,15 @@ const questions = [
 },
 {
     type: 'input',
+    message: 'What is the repository of the project',
+    name: 'github',
+    default: true
+  },
+
+{
+    type: 'input',
     message: 'Enter a description of your project:',
-    name: 'descripton',
+    name: 'description',
     default: true
 },
 {
@@ -25,7 +38,13 @@ const questions = [
 },
 {
     type: 'input',
-    message: 'Enter Email informaiton:',
+    message: 'What programs need to be installed for program to run',
+    name: 'install',
+    default: true
+  },
+{
+    type: 'input',
+    message: 'Enter Email for contact information:',
     name: 'Email',
     default: true
 },
@@ -36,21 +55,48 @@ const questions = [
     default: true
 },
 
+{
+    type: 'list',
+    name: 'license',
+    message: 'Pick a license?',
+    choices: ['MIT', 'ISC', 'GNU GPLv3','Unlicensed'],
+    
+},
+
+
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName,data);
-}
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+      fs.writeFile('./generatedREADME.md', fileContent, err => {
+        if (err) {
+          reject(err);
+          return;
+        }
+  
+        resolve({
+          ok: true,
+          message: "Readme file made"
+        });
+      });
+    });
+  };
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then((an))
+    .then(function(answer){
+        console.log(answer);
+        var fileContent =generateMarkdown(answer);
+        writeFile(fileContent)
+    });
+   
 }
 
 // Function call to initialize app
 init();
-*/
 
-console.log(inquirer);
+
+module.exports = questions;
+
