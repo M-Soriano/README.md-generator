@@ -15,44 +15,44 @@ const questions = [
     type: 'input',
     message: 'What is the name of the project?',
     name: 'title',
-    default: true
+   
 },
 {
     type: 'input',
     message: 'What is the repository of the project',
     name: 'github',
-    default: true
+   
   },
 
 {
     type: 'input',
     message: 'Enter a description of your project:',
     name: 'description',
-    default: true
+   
 },
 {
     type: 'input',
     message: 'Enter name of Author:',
     name: 'Author',
-    default: true
+    
 },
 {
     type: 'input',
-    message: 'What programs need to be installed for program to run',
+    message: 'What programs are needed to be installed for program to run',
     name: 'install',
-    default: true
+   
   },
 {
     type: 'input',
     message: 'Enter Email for contact information:',
     name: 'Email',
-    default: true
+   
 },
 {
     type: 'input',
     message: 'Do you want to include a website:',
     name: 'website',
-    default: true
+   
 },
 
 {
