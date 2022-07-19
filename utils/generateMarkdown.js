@@ -53,22 +53,45 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
-  
 
+### Table of Contents:
+### [Name of Project.](#title)
+### [Name of Repository.](#github)
+### [Description of project.](#description)
+### [Programs to install.](#install)
+### [Name of Author.](#author)
+### [contact Email.](#email)
+### [Name of website.](#website)
+### [License type.](#lincense)
+
+
+
+
+
+
+  
+## title
   Name of Project = ${data.title}
 
+## github
   Repository of the project = ${data.github}
 
+## description
   Description of your project = ${data.description}
 
+## install
   Programs need to be installed for program to run = ${data.install}
 
+# author
   Author = ${data.Author}
 
+## email
   Contact Email = ${data.Email}
 
+## website
   Website = ${data.website}
 
+## lincense
   Lincense = ${renderLicenseBadge(data.license)}
              ${renderLicenseLink(data.license)}
             ${data.license}
